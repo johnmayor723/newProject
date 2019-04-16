@@ -12,7 +12,7 @@
   <link rel='stylesheet' href='styles/main.css'
   <title></title>
   <style>
-
+  
   #dropdown1{
     top:-63;
   }
@@ -81,8 +81,9 @@
         </ul>
         
         <div id="modal1" class="modal">
-          <div class="modal-content">
-            <div class= 'form-field'>
+          <div class="modal-content" >
+           <form  action='/users/signup' method='post'>
+              <div class= 'form-field'>
                 <label for="email">email</label>
                 <input type="email" class="form-control" value='email' placeholder="email">
              </div>
@@ -99,13 +100,14 @@
                 <input type="file" class="form-control" value='profileimage' placeholder="upload a picture">
              </div>
             <div class= 'form-field'>
-                <button class ='btn-large red align-center modal-close'>Sign up</button>
+                <button href='/users/signup' class ='btn-large red align-center '>Sign up</button>
             </div>
+           </form>
           </div>
        </div>
        
          <div id="modal2" class="modal">
-          <div class="modal-content">
+          <div class="modal-content" method='post' action='/users/signin'>
             <div class= 'form-field'>
                 <label for="email">email</label>
                 <input type="email" class="form-control" value='email' placeholder="email">
@@ -127,7 +129,7 @@
       
          <div id="modal3" class="modal">
           <div class="modal-content">
-            <div class= 'form-field'>
+            <div class= 'form-field' method='post' action='/hosts/signup'>
                 <label for="email">email</label>
                 <input type="email" class="form-control" value='email' placeholder="email">
              </div>
@@ -144,14 +146,14 @@
                 <input type="file" class="form-control" value='profileimage' placeholder="upload a picture">
              </div>
             <div class= 'form-field'>
-                <button class ='btn-large red align-center modal-close'>Sign in</button>
+                <button  class ='btn-large red align-center modal-close'>Sign in</button>
             </div>
           </div>
        </div>
         
         <div id="modal4" class="modal">
           <div class="modal-content">
-            <div class= 'form-field'>
+            <div class= 'form-field' method='post' action='/hosts/signin'>
                 <label for="email">email</label>
                 <input type="email" class="form-control" value='email' placeholder="email">
              </div>
@@ -194,11 +196,7 @@
         <div class="col s6 m6">
           <h2>BnB Homes</h2>
           <h4>Quality Rooms at Wallet-Friendly Prices</h4>
-         
        </div>
-    
-       
-
        
         <div class="col s6 m6">
             <div class=' black lighten-4' id='formcard'>

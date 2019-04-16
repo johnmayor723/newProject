@@ -19,6 +19,12 @@ app.set('view engine', 'ejs');
 app.get('/', function(req,res, next){
     res.render('home')
 })
+app.get('/signup', function(req, res, next){
+    res.render('users/signup')
+})
+app.post('/users/signup', function(req, res, next){
+   res.render('users/home.ejs')
+})
 
 app.listen(PORT, function(){
     console.log(`server started on ${PORT}`)
