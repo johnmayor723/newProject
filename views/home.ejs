@@ -12,6 +12,13 @@
   <link rel='stylesheet' href='styles/main.css'
   <title></title>
   <style>
+
+  #dropdown1{
+    top:-63;
+  }
+   #dropdown2{
+    top:-62;
+  }
     header{
       background: url('images2/main2.png');
       background-size: cover;
@@ -57,7 +64,8 @@
           <i class="material-icons">menu</i>
         </a>
         <ul class="right hide-on-med-and-down">
-          <li> <a class='dropdown-trigger ' href='#' data-target='dropdown1'>Accounts</a></li>
+          <li> <a class='dropdown-trigger ' href='#' data-target='dropdown1'>Find Rooms</a></li>
+          <li> <a class='dropdown-trigger ' href='#' data-target='dropdown2'>Host Rooms</a></li>
           <li><a href="#photos">Homes</a></li>
           <li><a href="#services">About</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -71,12 +79,107 @@
             <i class="fab fa-twitter"></i>
           </a></li>
         </ul>
+        
+        <div id="modal1" class="modal">
+          <div class="modal-content">
+            <div class= 'form-field'>
+                <label for="email">email</label>
+                <input type="email" class="form-control" value='email' placeholder="email">
+             </div>
+             <div class= 'form-field'>
+                 <label for="username">username</label>
+                <input type="text" class="form-control" value='username' placeholder="username">
+             </div>
+             <div class= 'form-field'>
+             <label for="email">password</label>
+                <input type="password" class="form-control" value='password' placeholder="password">
+             </div>
+              <div class= 'form-field'>
+             <label for="email">password</label>
+                <input type="file" class="form-control" value='profileimage' placeholder="upload a picture">
+             </div>
+            <div class= 'form-field'>
+                <button class ='btn-large red align-center modal-close'>Sign up</button>
+            </div>
+          </div>
+       </div>
+       
+         <div id="modal2" class="modal">
+          <div class="modal-content">
+            <div class= 'form-field'>
+                <label for="email">email</label>
+                <input type="email" class="form-control" value='email' placeholder="email">
+             </div>
+             <div class= 'form-field'>
+                 <label for="username">username</label>
+                <input type="text" class="form-control" value='username' placeholder="username">
+             </div>
+             <div class= 'form-field'>
+             <label for="email">password</label>
+                <input type="password" class="form-control" value='password' placeholder="password">
+             </div>
+            <div class= 'form-field'>
+                <button class ='btn-large red align-center modal-close'>Sign in</button>
+            </div>
+          </div>
+       </div>
+       
+      
+         <div id="modal3" class="modal">
+          <div class="modal-content">
+            <div class= 'form-field'>
+                <label for="email">email</label>
+                <input type="email" class="form-control" value='email' placeholder="email">
+             </div>
+             <div class= 'form-field'>
+                 <label for="username">username</label>
+                <input type="text" class="form-control" value='username' placeholder="username">
+             </div>
+             <div class= 'form-field'>
+             <label for="email">password</label>
+                <input type="password" class="form-control" value='password' placeholder="password">
+             </div>
+              <div class= 'form-field'>
+             <label for="email">password</label>
+                <input type="file" class="form-control" value='profileimage' placeholder="upload a picture">
+             </div>
+            <div class= 'form-field'>
+                <button class ='btn-large red align-center modal-close'>Sign in</button>
+            </div>
+          </div>
+       </div>
+        
+        <div id="modal4" class="modal">
+          <div class="modal-content">
+            <div class= 'form-field'>
+                <label for="email">email</label>
+                <input type="email" class="form-control" value='email' placeholder="email">
+             </div>
+             <div class= 'form-field'>
+                 <label for="username">username</label>
+                <input type="text" class="form-control" value='username' placeholder="username">
+             </div>
+             <div class= 'form-field'>
+             <label for="email">password</label>
+                <input type="password" class="form-control" value='password' placeholder="password">
+             </div>
+            <div class= 'form-field'>
+                <button class ='btn-large red align-center modal-close'>Sign in</button>
+            </div>
+          </div>
+       </div>
+       
+          
+      
         <ul id='dropdown1' class='dropdown-content'>
-            <li><a href="#!">usersignup</a></li>
-            <li><a href="#!">usersignin</a></li>
+            <li><a class='waves-effect waves-light  modal-trigger' href="#modal1">sign up</a></li>
+            <li><a class='waves-effect waves-light  modal-trigger' href="#modal2">sign in</a></li>
             <li class="divider" tabindex="-1"></li>
-            <li><a href="#!"><i class="material-icons">user</i>hostsignup</a></li>
-            <li><a href="#!"><i class="material-icons">user</i>hostsignin</a></li>
+          </ul>
+           <ul id='dropdown2' class='dropdown-content'>
+            <li><a class=' modal-trigger' href="#modal3">sign up</a></li>
+            <li><a class='waves-effect waves-light  modal-trigger' href="#modal4">sign in</a></li>
+            <li class="divider" tabindex="-1"></li>
           </ul>
         <ul class="sidenav grey lighten-2" id="mobile-menu">
           <li><a href="#">Photo's</a></li>
@@ -93,6 +196,10 @@
           <h4>Quality Rooms at Wallet-Friendly Prices</h4>
          
        </div>
+    
+       
+
+       
         <div class="col s6 m6">
             <div class=' black lighten-4' id='formcard'>
                   <div class="row">
@@ -297,6 +404,7 @@
       $('.tooltipped').tooltip();
       $('.scrollspy').scrollSpy();
        $('.dropdown-trigger').dropdown();
+       $('.modal').modal();
     });
   </script>
 </body>

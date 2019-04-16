@@ -1,3 +1,24 @@
+.modal {
+    display: none;
+    left: 0;
+    right: 0;
+    background-color: #fafafa;
+    padding-top: 30px;
+   height:1000px;
+    width: 40%;
+    padding-bottom:50px;
+    margin: auto;
+    overflow-y: auto;
+    border-radius: 2px;
+    will-change: top, opacity;
+}
+.modal .modal-close {
+    align-items: center;
+    cursor: pointer;
+    padding-right: 10;
+    right:100;
+}
+
 #formcard{
     height:35%;
     opacity:1;
