@@ -1,0 +1,303 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+  <link rel='stylesheet' href='styles/main.css'
+  <title></title>
+  <style>
+    header{
+      background: url('images2/main2.png');
+      background-size: cover;
+      background-position: center;
+      min-height: 660px;
+    }
+    
+    @media screen and (max-width: 670px){
+      header{
+        min-height: 500px;
+      }
+    }
+    header  h2 {
+    color: #FFF;
+    text-shadow: 0px 0.04em 0.8em rgba(0, 0, 0, 0.9);
+    font-weight: 600;
+    }
+    header  h4 {
+    color: #FFF;
+    text-shadow: 0px 0.04em 0.8em rgba(0, 0, 0, 0.9);
+    font-weight: 600;
+    }
+    .section{
+      padding-top: 4vw;
+      padding-bottom: 4vw;
+    }
+     .tabs .indicator{
+      background-color: #1a237e;
+    }
+    .tabs .tab a:focus, .tabs .tab a:focus.active{
+      background: transparent;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- navbar -->
+  <header>
+    <nav class="nav-wrapper transparent">
+      <div class="container">
+        <a href="#" class="brand-logo">BnB Homes</a>
+        <a href="#" class="sidenav-trigger" data-target="mobile-menu">
+          <i class="material-icons">menu</i>
+        </a>
+        <ul class="right hide-on-med-and-down">
+          <li> <a class='dropdown-trigger ' href='#' data-target='dropdown1'>Accounts</a></li>
+          <li><a href="#photos">Homes</a></li>
+          <li><a href="#services">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+           <li><a href="#" class="tooltipped btn-floating btn-small indigo darken-4" data-position="bottom" data-tooltip="Instagram"> 
+            <i class="fab fa-instagram"></i>
+          </a></li>
+          <li><a href="#" class="tooltipped btn-floating btn-small indigo darken-4" data-position="bottom" data-tooltip="Facebook">
+            <i class="fab fa-facebook"></i>
+          </a></li>
+          <li><a href="#" class="tooltipped btn-floating btn-small indigo darken-4" data-position="bottom" data-tooltip="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a></li>
+        </ul>
+        <ul id='dropdown1' class='dropdown-content'>
+            <li><a href="#!">usersignup</a></li>
+            <li><a href="#!">usersignin</a></li>
+            <li class="divider" tabindex="-1"></li>
+            <li><a href="#!"><i class="material-icons">user</i>hostsignup</a></li>
+            <li><a href="#!"><i class="material-icons">user</i>hostsignin</a></li>
+          </ul>
+        <ul class="sidenav grey lighten-2" id="mobile-menu">
+          <li><a href="#">Photo's</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="hero-content-area">
+     <div class='container'>
+      <div class="row">
+        <div class="col s6 m6">
+          <h2>BnB Homes</h2>
+          <h4>Quality Rooms at Wallet-Friendly Prices</h4>
+         
+       </div>
+        <div class="col s6 m6">
+            <div class=' black lighten-4' id='formcard'>
+                  <div class="row">
+                    <div class="col12 l12">
+                      <div class='card'>
+                        <div class ='card-action red whit-text'>
+                          <h4>Find a home</h4>
+                        </div>
+                          <div class='card-content'>
+                            <div class= 'form-field'>
+                            
+                              <input type="text" class="form-control" placeholder="where are you going ?">
+                            </div>
+                            <div class= 'form-field'>
+                             <button class ='btn-large red align-center'>Search For Homes</button>
+                            </div>
+                         </div>
+                        </div>
+                      </div>
+                  </div>
+            </div>
+        </div>
+      </div>
+     </div> 
+    </div>
+  </header>
+
+  <!-- photo / grid -->
+  <section class="container section scrollspy" id="photos">
+    <div class="row">
+      <div class="col s12 l4">
+          <img src="images2/main.png" alt="" class="responsive-img materialboxed">
+      </div>
+      <div class="col s12 l6 offset-l1">
+        <h2 class="indigo-text text-darken-4">Real Homes</h2>
+        <p>
+          Use our helpful features to find the perfect host 
+        family. Whether you want to borrow a bike or have full
+        access to the kitchen we've the right room for your stay.
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12 l4 offset-l1 push-l7">
+          <img src="images2/main1.png" alt="" class="responsive-img materialboxed">
+      </div>
+      <div class="col s12 l6 offset-l1 pull-l5 right-align">
+        <h2 class="indigo-text text-darken-4">Real People</h2>
+      <p>
+        Use our helpful features to find the perfect host 
+        family. Whether you want to borrow a bike or have full
+        access to the kitchen we've the right room for your stay.
+      </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12 l4">
+          <img src="images2/main3.png" alt="" class="responsive-img materialboxed">
+      </div>
+      <div class="col s12 l6 offset-l1">
+        <h2 class="indigo-text text-darken-4">Real Connections</h2>
+        <p>
+          Use our helpful features to find the perfect host 
+          family. Whether you want to borrow a bike or have full
+          access to the kitchen we've the right room for your stay.
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- parallax -->
+  <div class="parallax-container">
+    <div class="parallax">
+      <img src="images2/main5.png" alt="" class="responsive-img">
+    </div>
+  </div>
+  <!-- services / tabs -->
+<section class="section container scrollspy" id="services">
+    <div class="row">
+      <div class="col s12 l4">
+        <h2 class="indigo-text text-darken-4">What I do..</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci.</p>
+        <p>Mauris dolor augue, vulputate in pharetra ac, facilisis nec libero. Fusce condimentum gravida urna, vitae scelerisque erat ornare nec.</p>
+      </div>
+      <div class="col s12 l6 offset-l2">
+        <!-- tabs -->
+        <ul class="tabs">
+          <li class="tab col s6">
+            <a href="#photography" class="active indigo-text text-darken-4">Photography</a>
+          </li>
+          <li class="tab col s6">
+            <a href="#editing" class="indigo-text text-darken-4">Editing</a>
+          </li>
+        </ul>
+        <div id="photography" class="col s12">
+            <p class="flow-text indigo-text text-darken-4">Photography</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci.</p>
+            <p>Mauris dolor augue, vulputate in pharetra ac, facilisis nec libero. Fusce condimentum gravida urna, vitae scelerisque erat ornare nec.</p>
+        </div>
+        <div id="editing" class="col s12">
+            <p class="flow-text indigo-text text-darken-4">Editing</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci.</p>
+            <p>Mauris dolor augue, vulputate in pharetra ac, facilisis nec libero. Fusce condimentum gravida urna, vitae scelerisque erat ornare nec.</p>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- parallax -->
+  <div class="parallax-container">
+    <div class="parallax">
+      <img src="images2/main4.png" alt="" class="responsive-img">
+    </div>
+  </div>
+  <!-- contact form -->
+   <section class="section container scrollspy" id="contact">
+    <div class="row">
+      <div class="col s12 l5">
+        <h2 class="indigo-text text-darken-4">Get in Touch</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci.</p>
+        <p>Mauris dolor augue, vulputate in pharetra ac, facilisis nec libero. Fusce condimentum gravida urna, vitae scelerisque erat ornare nec.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci.</p>
+        <p>Mauris dolor augue, vulputate in pharetra ac, facilisis nec libero. Fusce condimentum gravida urna, vitae scelerisque erat ornare nec.</p>
+      </div>
+      <div class="col s12 l5 offset-l2">
+        <form>
+          <div class="input-field">
+            <i class="material-icons prefix">email</i>
+            <input type="email" id="email">
+            <label for="email">Your Email</label>
+          </div>
+          <div class="input-field">
+            <i class="material-icons prefix">message</i>
+            <textarea id="message" class="materialize-textarea" cols="20" rows="20"></textarea>
+            <label for="message">Your Message</label>
+          </div>
+          <div class="input-field">
+            <i class="material-icons prefix">date_range</i>
+            <input type="text" id="date" class="datepicker">
+            <label for="date">Choose a date you need me for...</label>
+          </div>
+          <div class="input-field">
+            <p>Services required:</p>
+            <p>
+              <label>
+                <input type="checkbox">
+                <span>Photography</span>
+              </label>
+            </p>
+            <p>
+              <label>
+                <input type="checkbox">
+                <span>Photo Editing</span>
+              </label>
+            </p>
+          </div>
+          <div class="input-field center">
+            <button class="btn">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+  <!-- footer -->
+ <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2014 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+          </div>
+        </footer>
+ <!-- Compiled and minified JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('.sidenav').sidenav();
+      $('.materialboxed').materialbox();
+       $('.parallax').parallax();
+        $('.datepicker').datepicker({
+        disableWeekends: true,
+        yearRange: 1
+      });
+      $('.tooltipped').tooltip();
+      $('.scrollspy').scrollSpy();
+       $('.dropdown-trigger').dropdown();
+    });
+  </script>
+</body>
+</html>

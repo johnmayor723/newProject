@@ -1,0 +1,64 @@
+#formcard{
+    height:35%;
+    opacity:1;
+}
+ header{
+      background: url('images2/main2.png');
+      background-size: cover;
+      background-position: center;
+      min-height: 1000px;
+    }
+    @media screen and (max-width: 670px){
+      header{
+        min-height: 500px;
+      }
+    }
+    .section{
+      padding-top: 4vw;
+      padding-bottom: 4vw;
+    }
+     .tabs .indicator{
+      background-color: #1a237e;
+    }
+    .tabs .tab a:focus, .tabs .tab a:focus.active{
+      background: transparent;
+    }
+    .hero {
+	position: relative;
+	justify-content: center;
+	text-align: center;
+	min-height: 100vh;
+	color: #fff;
+}
+.hero-content-area {
+    padding-top: 120px;
+    padding-left: 50px;
+	opacity: 0;
+	margin-top: 100px;
+	animation: 1s slidefade 1s forwards;
+}
+
+@keyframes slidefade {
+	100% {
+		opacity: 1;
+		margin: 0;
+	}
+}
+
+@media (max-width: 800px) {
+	.hero {
+		min-height: 600px;
+	}
+
+	.hero h1 {
+		font-size: 48px;
+	}
+
+	.hero h3 {
+		font-size: 24px;
+	}
+
+	.hero a.btn {
+		padding: 15px 40px;
+	}
+}

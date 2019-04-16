@@ -17,7 +17,7 @@ app.set('view engine', 'ejs');
 
 // routes
 app.get('/', function(req,res, next){
-    res.render('index')
+    res.render('home')
 })
 
 app.listen(PORT, function(){
