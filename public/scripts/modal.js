@@ -1,26 +1,26 @@
 // Get DOM Elements
-const modal = document.querySelector('#my-midal');
-const modalBtn = document.querySelector('#midal-btn');
+const midal = document.querySelector('#my-midal');
+const midalBtn1 = document.querySelector('#midal-btn1');
 const closeBtn = document.querySelector('.clise');
 
 // Events
-modalBtn.addEventListener('click', openMidal);
+midalBtn1.addEventListener('click', openMidal);
 closeBtn.addEventListener('click', closeMidal);
 window.addEventListener('click', outsideClick);
 
 // Open
 function openMidal() {
-  modal.style.display = 'block';
+  midal.style.display = 'block';
 }
 
 // Close
 function closeMidal() {
-  modal.style.display = 'none';
+  midal.style.display = 'none';
 }
 
 // Close If Outside Click
 function outsideClick(e) {
-  if (e.target == modal) {
-    modal.style.display = 'none';
+  if (e.target == midal) {
+    midal.style.display = 'none';
   }
 }

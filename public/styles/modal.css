@@ -3,16 +3,33 @@
   --modal-color: #428bca;
 }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: #f4f4f4;
-  font-size: 17px;
-  line-height: 1.6;
-  display: flex;
-  height: 100vh;
-  align-items: center;
-  justify-content: center;
+
+
+input[type=text]:not(.browser-default){
+  border-radius:3px;
+  background-color: transparent;
+    border-top-width: initial;
+    border-right-width: initial;
+    border-left-width: initial;
+    border-top-color: initial;
+    border-right-color: initial;
+    border-left-color: initial;
+    height: 3rem;
+    width: 100%;
+    font-size: 16px;
+    box-shadow: none;
+    box-sizing: content-box;
+    inherited: no;
+    border-bottom-width:1;
+    border-image: initial;
+    border-bottom: 1px solid rgb(158, 158, 158);
+    border-radius: 0px;
+    outline: none;
+    margin: 0px 0px 8px;
+    padding: 0px;
+    transition: box-shadow 0.3s ease 0s, border 0.3s ease 0s, -webkit-box-shadow 0.3s ease 0s;
 }
+
 
 .button {
   background: #428bca;
@@ -41,10 +58,11 @@ body {
 
 .midal-content {
   margin: 10% auto;
-  width: 60%;
+  width: 30%;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
   animation-name: modalopen;
   animation-duration: var(--modal-duration);
+  opacity: 0.5;
 }
 
 .midal-header h2,
