@@ -12,31 +12,26 @@ const passportLocalMongoose = require("passport-local-mongoose")
 
 const errorHandler = require('./handlers/errors')
 
-const app = express()
 
 const usersRoutes = require('./routes/users')
 
+mongoose.connect('mongodb://admin:majoje1582@ds145786.mlab.com:45786/bnbhomes2')
+//mongoose.connect('mongodb://admin:majoje1582@ds151805.mlab.com:51805/bnbhomes')
 
-mongoose.connect('mongodb://admin:majoje1582@ds151805.mlab.com:51805/bnbhomes')
+const app = express()
+
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');//
-
-app.use(bodyParser.urlencoded({extended: true}));
-// view engine setup
-//app.engine('html', cons.swig)
-//app.set('views', path.join(__dirname, 'views'));
-//app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
-
-
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(require("express-session")({
-    secret: "Once again Rusty wins cutest dog!",
+    secret: "Rusty is the best and cutest dog in the world",
     resave: false,
     saveUninitialized: false
 }));
 
-//app.use(flash());
+
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -48,9 +43,7 @@ passport.deserializeUser(User.deserializeUser());
 app.get('/', function(req,res, next){
     res.render('homepage')
 })
-app.get('/signup', function(req, res){
-    res.render('users/signup')
-})
+
 app.use('/users/',  usersRoutes)
 
 app.use(function(req, res, next) {

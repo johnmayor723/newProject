@@ -1,7 +1,7 @@
 const express = require("express");
 const router  = express.Router();
 const passport = require("passport");
-const {userhome } = require('../handlers/auth')
+const {userhome, signup } = require('../handlers/auth')
 const User = require("../models/users");
 
 
@@ -11,24 +11,19 @@ const User = require("../models/users");
 router.get('/home', userhome)
 
 
-router.post("/signup", function(req, res){
-    User.register(new User({username: req.body.username, email: req.body.email}), req.body.password, function(err, user){
-        if(err){
-            console.log(err);
-            return res.render('register');
-        }
-        passport.authenticate("local")(req, res, function(){
-           res.redirect("users/home", {user:user});
-        });
-    });
+router.post("/signup", signup)
+
+router.post('/signin', passport.authenticate('local', { failureRedirect: '/' }), function(req, res) {
+  res.redirect('/users/home' , req.user.username)
 });
 
-router.post("/signin", passport.authenticate("local", 
+/* router.post("/signin", passport.authenticate("local", 
     {
-        successRedirect: "/users/home",
-        failureRedirect: "/"
-    }), function(req, res){
-});
+        successRedirect: "/",
+        failureRedirect: "/signup"
+    }), function(){
+    
+}); */
 
 
 module.exports = router;

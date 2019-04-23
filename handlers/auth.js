@@ -1,5 +1,6 @@
 const User = require("../models/users");
 const jwt = require("jsonwebtoken");
+const passport = require('passport')
 
 
 exports.userhome = function(req, res){
@@ -11,18 +12,15 @@ exports.signin =  function(req, res, next) {
 
 };
 
-exports.signup = function(req, res, next) {
- let email = req.body.email
- let password = req.body.password
- let userName = req.body.username
- let firstName = req.body.firstname
- let lastName = req.body.lastname
- let profileImage = req.body.profileImage
- User.register(new User({email,userName,profileImage,firstName,lastName}), password, function(err, user){
-   if(err){
-     res.redirect('/')
-     console.log(err)
-   }
-   res.send('hi')
- })
-};
+exports.signup = function(req, res){
+     User.register(new User({username: req.body.username, email:req.body.email}), req.body.password, function(err, user){
+        if(err){
+            console.log(err);
+            return res.send('failure');
+        }
+        passport.authenticate("local")(req, res, function(){
+           res.render("users/home", {user:user});
+           console.log(user)
+        });
+    });
+}
