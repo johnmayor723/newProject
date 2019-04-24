@@ -1,6 +1,6 @@
-require('dotenv').config()
+//require('dotenv').config()
 const express = require('express')
-const cons = require('consolidate');
+//const cons = require('consolidate');
 const PORT =  8080
 const path = require('path')
 const mongoose = require('mongoose')

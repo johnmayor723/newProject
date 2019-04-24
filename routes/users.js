@@ -13,8 +13,9 @@ router.get('/home', userhome)
 
 router.post("/signup", signup)
 
-router.post('/signin', passport.authenticate('local', { failureRedirect: '/' }), function(req, res) {
-  res.redirect('/users/home' , req.user.username)
+router.post('/signin', passport.authenticate('local'), function(req, res) {
+    let user = req.user
+  res.render('users/home',{user:user})
 });
 
 /* router.post("/signin", passport.authenticate("local", 

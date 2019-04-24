@@ -1,5 +1,5 @@
 const User = require("../models/users");
-const jwt = require("jsonwebtoken");
+//const jwt = require("jsonwebtoken");
 const passport = require('passport')
 
 
