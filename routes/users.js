@@ -13,18 +13,25 @@ router.get('/home', userhome)
 
 router.post("/signup", signup)
 
-router.post('/signin', passport.authenticate('local'), function(req, res) {
+router.post('/signin', passport.authenticate('local',{
+    failureRedirect: '/'
+}), function(req, res) {
     let user = req.user
   res.render('users/home',{user:user})
 });
 
-/* router.post("/signin", passport.authenticate("local", 
-    {
-        successRedirect: "/",
-        failureRedirect: "/signup"
-    }), function(){
-    
-}); */
+// logout route
+router.get("/signout", function(req, res){
+   req.logout();
+   res.redirect("/");
+});
 
+//middleware
+function isLoggedIn(req, res, next){
+    if(req.isAuthenticated()){
+        return next();
+    }
+    res.redirect("/");
+}
 
 module.exports = router;
