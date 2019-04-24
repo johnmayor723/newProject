@@ -1,6 +1,20 @@
 const mongoose = require("mongoose");
-mongoose.set("debug", true);
-mongoose.Promise = Promise;
-mongoose.connect('mongodb://admin:majoje1582@ds151805.mlab.com:51805/bnbhomes')
+var passportLocalMongoose = require("passport-local-mongoose");
 
-module.exports.User = require("./users");
+const hostSchema = new mongoose.Schema({
+     username: String,
+    password: String,
+    email: String,
+    comments:{
+       type:mongoose.Schema.Types.ObjectId,
+       ref:'Comment'
+    },
+    hosts:{
+        type:mongoose.Schema.Types.ObjectId,
+       ref:'Host'
+    }
+})
+
+hostSchema.plugin(passportLocalMongoose);
+
+module.exports = mongoose.model("Host", hostSchema);
