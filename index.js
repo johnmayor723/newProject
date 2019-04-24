@@ -9,6 +9,7 @@ const bodyParser = require('body-parser')
 const User = require("./models/users")
 const LocalStrategy = require("passport-local")
 const passportLocalMongoose = require("passport-local-mongoose")
+const Home = require('./models/homes')
 
 const errorHandler = require('./handlers/errors')
 
@@ -40,9 +41,19 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 // routes
-app.get('/', function(req,res, next){
+/*app.get('/', function(req,res, next){
     res.render('homepage')
-})
+}) */
+app.get("/", function(req, res){
+    // Get all homes from DB
+    Home.find({}, function(err, allhomes){
+       if(err){
+           console.log(err);
+       } else {
+          res.render("homepage",{homes:allhomes});
+       }
+    });
+});
 
 app.use('/users/',  usersRoutes)
 

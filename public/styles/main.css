@@ -1,4 +1,17 @@
-
+img{
+   
+    margin:20px;
+    width:310px;
+}
+#formid{
+    width:650px;
+    margin-left: 340px;
+    margin-bottom: 20px;
+}
+#navblacky h2 {
+    background-color:white ;
+    color:black;
+}
  header{
       background: url('images2/main2.png');
       background-size: cover;
