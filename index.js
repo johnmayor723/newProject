@@ -15,6 +15,8 @@ const errorHandler = require('./handlers/errors')
 
 
 const usersRoutes = require('./routes/users')
+const hostsRoutes = require('./routes/hosts')
+const homesRoute = require('./routes/homes')
 
 mongoose.connect('mongodb://admin:majoje1582@ds145786.mlab.com:45786/bnbhomes2')
 //mongoose.connect('mongodb://admin:majoje1582@ds151805.mlab.com:51805/bnbhomes')
@@ -56,6 +58,8 @@ app.get("/", function(req, res){
 });
 
 app.use('/users/',  usersRoutes)
+app.use('/hosts/',  hostsRoutes)
+app.use('/homes/',  homesRoute)
 
 app.use(function(req, res, next) {
   let err = new Error("Not Found");

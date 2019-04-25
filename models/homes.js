@@ -7,14 +7,14 @@ var homeSchema = new mongoose.Schema({
       type:String
       }] ,
    description: String,
-   user:{
+   hosts:{
        type:mongoose.Schema.Types.ObjectId,
-       ref:'User'
+       ref:'Host'
    },
    comments: [
       {
          type: mongoose.Schema.Types.ObjectId,
-         ref: "Host"
+         ref: "Comment"
       }
    ]
 });

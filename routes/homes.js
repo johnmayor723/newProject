@@ -40,13 +40,7 @@ router.get("/:id", function(req, res){
         }
     });
 });
-//move to host route when created
-function isHost(req, res, next){
-    if(req.host){
-        return next();
-    }
-    res.redirect("hosts/login");
-}
+
 
 module.exports = router;
 
