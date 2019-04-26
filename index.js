@@ -62,6 +62,19 @@ app.use('/users/',  usersRoutes)
 app.use('/hosts/',  hostsRoutes)
 app.use('/homes/',  homesRoute)
 
+app.get('/about', function(req, res){
+    res.render('about')
+})
+app.get('/contact', function(req, res){
+    res.render('contact')
+})
+app.get('/faq', function(req, res) {
+    res.render('faq')
+})
+app.get('/help', function(req, res) {
+    res.render('help')
+})
+
 app.use(function(req, res, next) {
   let err = new Error("Not Found");
   err.status = 404;
