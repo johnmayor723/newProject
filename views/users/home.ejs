@@ -1,16 +1,137 @@
-<% include ../partials/header %> 
-
-
-<div id='profil' class="card">
-  <div class="card-header">
-    Featured
+<html>
+  <head>
+    <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel='stylesheet' href='/styles/host-guest.css'>
+  
+  </head>
+  <body>
+    <ul id="dropdown1" class="dropdown-content">
+      <li><a href="#!">one</a></li>
+      <li><a href="#!">two</a></li>
+      <li class="divider"></li>
+      <li><a href="#!">three</a></li>
+    </ul>
+   <nav>
+  <div class="nav-wrapper">
+    <a href="/" class="brand-logo">BnB Homes</a>
+    <ul class="right hide-on-med-and-down">
+      <li><a href="/hosts/signout">Logout</a></li>
+      <li><a href="/hosts/edit">Edit Profile</a></li>
+      <!-- Dropdown Trigger -->
+      <li><a class="dropdown-trigger" href="#!" data-target="dropdown1"><%= user.username %><i class="material-icons right">arrow_drop_down</i></a></li>
+    </ul>
   </div>
-  <div class="card-body">
-    <h5 class="card-title">My BnB Homes</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#!" class="btn btn-primary">Go somewhere</a>
+</nav>
+
+<div class='container'>
+  <div class='row'>
+    <div class="col s6 m5">
+      <div id="my-card" class='card blue-grey darken-2 '>
+         <div class="card-content white-text">
+           <span class="card-title">Hello  <%= user.username %></span>
+         </div>
+        
+      </div>
+    </div>
+    <div class='col s6 m7'>
+          <form id="regForm" action="/homes/new" method='post'>
+            <h1>Let's Know More About You</h1>
+            <!-- One "tab" for each step in the form: -->
+            <div class="tab">Name:
+              <p><input placeholder="First name..." oninput="this.className = ''" name="fname"></p>
+              <p><input placeholder="Last name..." oninput="this.className = ''" name="lname"></p>
+            </div>
+            <div class="tab">Contact Info:
+              <p><input placeholder="E-mail..." oninput="this.className = ''" name="email"></p>
+              <p><input placeholder="Phone..." oninput="this.className = ''" name="phone"></p>
+            </div>
+            <div class="tab">Birthday:
+              <p><input placeholder="dd" oninput="this.className = ''" name="dd"></p>
+              <p><input placeholder="mm" oninput="this.className = ''" name="nn"></p>
+              <p><input placeholder="yyyy" oninput="this.className = ''" name="yyyy"></p>
+            </div>
+            <div class="tab">Login Info:
+              <p><input placeholder="Username..." oninput="this.className = ''" name="uname"></p>
+              <p><input placeholder="Password..." oninput="this.className = ''" name="pword" type="password"></p>
+            </div>
+            <div style="overflow:auto;">
+              <div style="float:right;">
+                <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+              </div>
+            </div>
+            <!-- Circles which indicates the steps of the form: -->
+            <div style="text-align:center;margin-top:40px;">
+              <span class="step"></span>
+              <span class="step"></span>
+              <span class="step"></span>
+              <span class="step"></span>
+            </div>
+          </form>
+
+    </div>
   </div>
 </div>
 
+<div class="container">
+  <div class="row">
+       <% homes.forEach(function(home){ %>
+            <div class="col s6 m4">
+                <div class="card thumbnail">
+                   <img src="<%= home.image %>">
+                   <div class="caption">
+                       <h4><%= home.title %></h4>
+                   </div>
+                   <p>
+                       <a href="/homes/<%= home._id %>" class="btn btn-primary">More Info</a>
+                   </p>
+                </div>
+            </div>
+        <% }); %>
+      </div>
+</div>
 
-<% include ../partials/footer %>
+    
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+     document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.dropdown-trigger');
+    var instances = M.Dropdown.init(elems, options);
+  });
+    </script>
+    <script src='/scripts/host-guest.js'></script>
+    
+    <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2014 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+          </div>
+        </footer>
+ 
+
+  </body>
+</html>

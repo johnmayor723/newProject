@@ -5,7 +5,7 @@ var Home = require("../models/homes");
 
 
 //CREATE - add new home to DB
-router.post("/", function(req, res){
+router.post("/new", function(req, res){
     // get data from form and add to campgrounds array
     var title = req.body.title;
     var image = req.body.image;
@@ -23,9 +23,9 @@ router.post("/", function(req, res){
 });
 
 //NEW - show form to create new home
-router.get("/new", function(req, res){
+/*router.get("/new", function(req, res){
    res.render("homes/new"); 
-});
+});*/
 
 // SHOW - shows more info about one home
 router.get("/:id", function(req, res){

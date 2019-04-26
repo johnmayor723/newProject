@@ -1,10 +1,19 @@
 const Host = require("../models/hosts");
 //const jwt = require("jsonwebtoken");
 const passport = require('passport')
+const Home = require('../models/homes')
 
 
 exports.hosthome = function(req, res){
-    res.render('hosts/home')
+     console.log(req.session.user)
+      var host = req.session.user
+      Home.find({}, function(err, allhomes){
+       if(err){
+           console.log(err);
+       } else {
+          res.render('hosts/home' , {host: host, homes :allhomes});
+       }
+    });
 }
 
 

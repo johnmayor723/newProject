@@ -1,10 +1,21 @@
 const User = require("../models/users");
 //const jwt = require("jsonwebtoken");
 const passport = require('passport')
+const Home = require('../models/homes')
 
 
 exports.userhome = function(req, res){
-    res.render('users/home')
+     console.log(req.session.user)
+      var user = req.session.user
+      Home.find({}, function(err, homes){
+          console.log(homes)
+       if(err){
+           console.log(err);
+       } else {
+          res.render('users/home' , {user: user, homes :homes});;
+       }
+    });
+   
 }
 
 exports.signin =  function(req, res, next) {
@@ -19,8 +30,13 @@ exports.signup = function(req, res){
             return res.send('failure');
         }
         passport.authenticate("local")(req, res, function(){
-           res.render("users/home", {user:user});
-           console.log(user)
+          req.session.valid = true;
+         let user = req.user
+         req.session.user = user
+         //req.session = host
+         console.log('redirecting to home page')
+         //res.render('hosts/home', {host: host})
+         res.redirect('/users/home')
         });
     });
 }

@@ -16,8 +16,13 @@ router.post("/signup", signup)
 router.post('/signin', passport.authenticate('local',{
     failureRedirect: '/'
 }), function(req, res) {
-    let host = req.user
-  res.render('hosts/home',{host:host})
+     req.session.valid = true;
+     let host = req.user
+     req.session.user = host
+     //req.session = host
+     console.log('redirecting to home page')
+     //res.render('hosts/home', {host: host})
+     res.redirect('/hosts/home')
 });
 
 // logout route
