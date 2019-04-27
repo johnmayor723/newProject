@@ -1,3 +1,26 @@
 #profil{
     height: 500px;
 }
+footer.page-footer {
+    bottom: 0;
+    color: #fff;
+    padding-left: 0;
+}
+.accordion{
+    padding :30 20 30 50;
+}
+
+ a img .rounded-circle{
+    width: 50px;
+    height: 59px;
+}
+
+nav #navblacky{
+    background-color:grey;
+    color:white;
+}
+
+.carousel{
+    top:-50;
+    height:250px;
+}

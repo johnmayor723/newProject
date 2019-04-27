@@ -20,7 +20,7 @@
   <!-- Material Design Bootstrap -->
 <!--  <link href="css/mdb.min.css" rel="stylesheet">
   <!-- Your custom styles (optional) -->
-<link href="/styles/main.css" rel="stylesheet"> 
+<link href="/css/styles.css" rel="stylesheet"> 
 </head>
 
 <body>
@@ -28,8 +28,8 @@
   <!-- Start your project here-->
 
 <!--Navbar -->
-<nav id='navblacky'class="mb-1 navbar navbar-expand-lg navbar-white">
-  <a class="navbar-brand" href="#"><h2>Welcome <%= user.username %></h2></a>
+<nav id='navblacky'class="mb-1 navbar navbar-expand-lg navbar-grey darken-2">
+  <a class="navbar-brand" href="#"><h2>BnB Homes</h2></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
     aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -51,13 +51,12 @@
       <li class="nav-item avatar dropdown">
         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-55" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
-          <img src="<%= user.profileImage  %> || https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg" class="rounded-circle z-depth-0"
-            alt="avatar image">
+         Accounts
         </a>
         <div class="dropdown-menu dropdown-menu-right dropdown-secondary"
           aria-labelledby="navbarDropdownMenuLink-55">
           
-           <% if(! user){ %>
+           <% if(! user ){ %>
            
           <a  class="dropdown-item" href="/signin">Login</a>
           <a class="dropdown-item" href="/signup">Sign Up</a>

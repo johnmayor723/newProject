@@ -69,7 +69,8 @@ app.get('/contact', function(req, res){
     res.render('contact')
 })
 app.get('/faq', function(req, res) {
-    res.render('faq')
+     let user = req.session.user
+    res.render('faq' ,{user:user})
 })
 app.get('/help', function(req, res) {
     res.render('help')

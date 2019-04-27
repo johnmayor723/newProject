@@ -1,6 +1,7 @@
 var express = require("express");
 var router  = express.Router();
 var Home = require("../models/homes");
+const { searchHomes } = require('../handlers/homes')
 
 
 
@@ -21,6 +22,10 @@ router.post("/new", function(req, res){
         }
     });
 });
+
+// search homes routes
+
+router.get('/search', searchHomes)
 
 //NEW - show form to create new home
 /*router.get("/new", function(req, res){
