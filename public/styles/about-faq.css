@@ -5,9 +5,23 @@
  align-items:center;
  background-size: cover;
  background-position: center center;
- background: url('/images2/main2.png');
-}
+ background: url('/images2/main10.png');
 
+}
+#micaform{
+    color:black;
+    padding-left:220px;
+    padding-right:220px;
+   
+}
+.faq-hero2{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
 #formid{
   padding:20px;
 }
