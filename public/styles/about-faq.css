@@ -1,0 +1,32 @@
+.faq-hero{
+ height: 450px;
+ display:flex;
+ justify-content:center;
+ align-items:center;
+ background-size: cover;
+ background-position: center center;
+ background: url('/images2/main2.png');
+}
+
+#formid{
+  padding:20px;
+}
+#micard{
+    height: 100%;
+}
+.mazo{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.mizo{
+  padding-top:30px;
+  padding-bottom:30px;
+}
+
+.page-footer{
+  padding: 0  !important;
+  margin:0;
+  width:100%;
+  
+}
