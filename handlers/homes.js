@@ -21,17 +21,63 @@ exports.getNewHomes = function (req, res){
 
 exports.createHomes = function(req, res){
     // get data from form and add to campgrounds array
-    var title = req.body.title;
-    var image = req.body.image;
-    var desc = req.body.description;
-    var newHost = {title: title, image: image, description: desc}
+    let title = req.body.title;
+    let image1 = req.body.image1
+    let image2 = req.body.image2
+    let image3 = req.body.image3
+    let images = []
+    images.push(image1)
+    images.push(image2)
+    images.push(image3)
+    let description = req.body.description;
+    let country = req.body.country
+    let city = req.body.city
+    let state = req.body.state
+    let address = req.body.address
+    let phone = req.body.phone
+    //let bankname = req.body.bankname
+    //let accountnumber = req.body.accountnumber
+    let author = {
+        id: req.user._id,
+        username: req.user.username
+    }
+    var newHost = {
+        title,
+        images,
+        description,
+        country,
+        city,
+        state,
+        address,
+        phone,
+        //bankname,
+       // accountnumber,
+        author
+        
+    }
     // Create a new home and save to DB
     Home.create(newHost, function(err, newlyCreated){
         if(err){
             console.log(err);
         } else {
             //redirect back to  homepage
-            res.redirect("/");
+            Home.find({}, function(err, homes){
+                //req.session.valid = true
+                //let user = req.user.id
+                //req.session.user = user
+               // let userHomes =homes.filter((home)=> home.id == user)
+               let userHomes = []
+               for(var i =0; i< homes.length;i++){
+                   if(homes[i].id === req.user.id){
+                       userHomes.push(homes[i])
+                   }
+               }
+                if(err){
+                    console.log(err)
+                }
+                return  res.render("users/home", {user:req.user, userHomes} );
+            })
+           
         }
     });
 }
@@ -53,4 +99,13 @@ exports.searchHomes = function(req, res){
        }); 
     }
 }
+
+exports.updateHomes = function(req, res){
+    Home.findById(req.params.id, req.body, function(err, home){
+         
+    })
+}
+
+
+
 

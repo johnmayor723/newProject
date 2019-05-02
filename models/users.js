@@ -5,6 +5,15 @@ var UserSchema = new mongoose.Schema({
     image:[{
         type:String
     }],
+    bvn:{
+        type:Number
+    },
+    id:{
+        type:String
+    },
+    idnumber:{
+        type:Number
+    },
     username:{
         type:String,
         unique:true,
@@ -21,6 +30,14 @@ var UserSchema = new mongoose.Schema({
         required:true
         
     },
+    phone:{
+       type:Number 
+    },
+    
+    dob:{
+        type:Number
+    },
+    
     comments:{
        type:mongoose.Schema.Types.ObjectId,
        ref:'Comment'

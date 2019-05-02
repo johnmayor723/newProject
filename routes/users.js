@@ -1,7 +1,7 @@
 const express = require("express");
 const router  = express.Router();
 const passport = require("passport");
-const {userhome, signup } = require('../handlers/auth')
+const {userhome, signup, updateuser } = require('../handlers/auth')
 const User = require("../models/users");
 
 
@@ -24,6 +24,8 @@ router.post('/signin', passport.authenticate('local',{
      //res.render('hosts/home', {host: host})
      res.redirect('/users/home')
 });
+
+router.put('/:id', updateuser)
 
 // logout route
 router.get("/signout", function(req, res){

@@ -19,7 +19,16 @@ exports.hosthome = function(req, res){
 
 
 exports.signup = function(req, res){
-     Host.register(new Host({username: req.body.username, email:req.body.email}), req.body.password, function(err, host){
+     Host.register(new Host({
+         username: req.body.username, 
+         email:req.body.email,
+         firstname:req.body.firstname,
+         lastname:req.body.lastname,
+         bankname:req.body.bankname,
+         accountnumber:req.body.accountnumber
+     }),
+         req.body.password,
+         function(err, host){
         if(err){
             console.log(err);
             return res.send('failure');
